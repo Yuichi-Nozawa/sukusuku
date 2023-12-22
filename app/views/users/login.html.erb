@@ -1,0 +1,6 @@
+<h2>ログイン</h2>
+<%= form_with url: users_login_path, method: :post do |form| %>
+  メールアドレス: <%= form.email_field :email, required: true %><br>
+  パスワード: <%= form.password_field :password, required: true %><br>
+  <%= form.submit 'ログイン' %>
+<% end %>
