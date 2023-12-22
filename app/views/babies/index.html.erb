@@ -1,0 +1,13 @@
+<!-- app/views/babies/index.html.erb -->
+
+<h1>すくすく</h1>
+
+<ul>
+  <% @babies.each do |baby| %>
+    <li>
+      <%= link_to baby.name, baby_path(baby) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "新しい赤ちゃん", new_baby_path, class: "btn btn-success" %>

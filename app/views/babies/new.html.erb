@@ -1,0 +1,27 @@
+<h1>新しい赤ちゃん</h1>
+
+<%= form_with(model: @baby, url: babies_path, method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :お名前 %><br>
+    <%= form.text_field :name %>
+  </div><br>
+
+  <div class="field">
+    <%= form.label :性別 %><br>
+    <%= form.radio_button :gender, '男の子' %> 男の子
+    <%= form.radio_button :gender, '女の子' %> 女の子
+  </div><br>
+
+  <div class="field">
+    <%= form.label :生年月日 %><br>
+    <%= form.select :birth_year, (Date.current.year - 10..Date.current.year).to_a.reverse, { prompt: '------' } %>年
+    <%= form.select :birth_month, 1..12, { prompt: '---' } %>月
+    <%= form.select :birth_day, 1..31, { prompt: '---' } %>日
+  </div><br>
+
+  <div class="actions">
+    <%= form.submit "追加" %>
+  </div><br>
+<% end %>
+
+<%= link_to "赤ちゃん一覧に戻る", babies_path, class: "btn btn-primary" %>
