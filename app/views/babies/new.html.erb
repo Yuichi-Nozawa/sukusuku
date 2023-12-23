@@ -14,9 +14,9 @@
 
   <div class="field">
     <%= form.label :生年月日 %><br>
-    <%= form.select :birth_year, (Date.current.year - 10..Date.current.year).to_a.reverse, { prompt: '------' } %>年
-    <%= form.select :birth_month, 1..12, { prompt: '---' } %>月
-    <%= form.select :birth_day, 1..31, { prompt: '---' } %>日
+    <%= form.select :birth_year, (Date.current.year - 10..Date.current.year).to_a.reverse, { prompt: '- - - - - -' } %>年
+    <%= form.select :birth_month, 1..12, { prompt: '- - -' } %>月
+    <%= form.select :birth_day, 1..31, { prompt: '- - -' } %>日
   </div><br>
 
   <div class="actions">
@@ -24,4 +24,4 @@
   </div><br>
 <% end %>
 
-<%= link_to "赤ちゃん一覧に戻る", babies_path, class: "btn btn-primary" %>
+<%= link_to "トップに戻る", babies_path, class: "btn btn-primary" %>

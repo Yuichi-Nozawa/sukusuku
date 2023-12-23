@@ -1,0 +1,29 @@
+<h1>新しい記録</h1>
+
+<%= form_with(model: @action, url: baby_actions_path(@baby), method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :milk, "ミルクの量" %><br>
+    <%= form.select :milk, (0..200).step(10), { prompt: '- - - -' } %>cc
+  </div><br>
+
+  <div class="field">
+    <%= form.label :omutsu, "おむつ交換（複数選択可能）" %><br>
+    <%= form.check_box :omutsu, { multiple: true }, 'おしっこ', false %> おしっこ
+    <%= form.check_box :omutsu, { multiple: true }, 'うんち', false %> うんち
+    <%= form.check_box :omutsu, { multiple: true }, 'げり', false %> げり
+  </div><br>
+
+  <div class="field">
+    <%= form.label :body_temperature, "体温" %><br>
+    <%= form.text_field :body_temperature, size: 10 %>度
+  </div><br>
+
+  <div class="field">
+    <%= form.label :memo, "メモ" %><br>
+    <%= form.text_area :memo, rows: 4, cols: 30 %>
+  </div><br>
+
+  <div class="actions">
+    <%= form.submit "保存", class: "btn btn-primary" %>
+  </div>
+<% end %>

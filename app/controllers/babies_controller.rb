@@ -1,5 +1,3 @@
-# app/controllers/babies_controller.rb
-
 class BabiesController < ApplicationController
   def index
     @babies = Baby.all
@@ -17,6 +15,10 @@ class BabiesController < ApplicationController
     else
       render :index
     end
+  end
+
+  def show
+    @baby = Baby.find(params[:id])
   end
 
   private
