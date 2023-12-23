@@ -10,7 +10,7 @@ class ActionsController < ApplicationController
   end
 
   def create
-    @action = @baby.action.new(action_params)
+    @action = Action.new(action_params)
 
     if @action.save
       redirect_to baby_path(@baby), notice: '記録が追加されました'
