@@ -1,8 +1,42 @@
-<h1><%= @baby.name %>の記録一覧</h1>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-<ul>
-  <% @records.each do |record| %>
-    <li><%= record.created_at %> - ミルク: <%= record.milk %>, 体温: <%= record.body_temperature %>, メモ: <%= record.memo %></li>
-  <% end %>
-</ul>
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+
+<h1><%= @baby.name %>の記録</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">時刻</th>
+      <th scope="col">ミルク(cc)</th>
+      <th scope="col">体温(度)</th>
+      <th scope="col">メモ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.created_at.strftime("%m/%d %H:%M") %></td>
+        <td><%= record.milk %></td>
+        <td><%= record.body_temperature %></td>
+        <td><%= record.memo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table><br>
+
 <%= link_to "トップに戻る", babies_path, class: "btn btn-primary" %>
