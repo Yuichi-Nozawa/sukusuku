@@ -6,12 +6,21 @@
     <%= form.select :milk, (0..200).step(10), { prompt: '- - - -' }, class: 'milk' %>cc
   </div><br>
 
-  <div class="field">
-    <%= form.label :omutsu, "おむつ交換（複数選択可能）" %><br>
-    <%= form.check_box :omutsu, { multiple: true }, 'おしっこ', false %> おしっこ
-    <%= form.check_box :omutsu, { multiple: true }, 'うんち', false %> うんち
-    <%= form.check_box :omutsu, { multiple: true }, 'げり', false %> げり
-  </div><br>
+  おむつ交換（複数選択可）<br>
+  <div class="field" style="display: inline-block;">
+    <%= form.check_box :oshikko %>
+    <%= form.label :oshikko, "おしっこ" %>
+  </div>
+
+  <div class="field" style="display: inline-block;">
+    <%= form.check_box :unchi %>
+    <%= form.label :unchi, "うんち" %>
+  </div>
+
+  <div class="field" style="display: inline-block;">
+    <%= form.check_box :geri %>
+    <%= form.label :geri, "げり" %>
+  </div><br><br>
 
   <div class="field">
     <%= form.label :body_temperature, "体温" %><br>

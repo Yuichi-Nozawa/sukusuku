@@ -23,7 +23,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_24_062744) do
 
   create_table "records", charset: "utf8", force: :cascade do |t|
     t.integer "milk"
-    t.string "omutsu", default: "0"
+    t.boolean "oshikko", default: false
+    t.boolean "unchi", default: false
+    t.boolean "geri", default: false
     t.string "body_temperature"
     t.text "memo"
     t.bigint "baby_id"
