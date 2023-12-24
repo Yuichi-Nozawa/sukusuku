@@ -1,12 +1,12 @@
 class RecordsController < ApplicationController
-  before_action :find_baby, only: [:new, :create]
+  before_action :find_baby, only: [:index, :new, :create]
 
   def new
     @record = Record.new
   end
 
   def index
-    @records = Record.where(baby_id: params[:baby_id])
+    @records = @baby.records.order(created_at: :asc)
   end
 
   def create
