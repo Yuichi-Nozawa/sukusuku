@@ -1,6 +1,6 @@
-<h1>新しい記録</h1>
+ <h1>新しい記録</h1>
 
-<%= form_with(model: @action, url: baby_actions_path(@baby), method: :post) do |form| %>
+<%= form_with(model: @record, url: baby_records_path(@baby), method: :post) do |form| %>
   <div class="field">
     <%= form.label :milk, "ミルクの量" %><br>
     <%= form.select :milk, (0..200).step(10), { prompt: '- - - -' }, class: 'milk' %>cc

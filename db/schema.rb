@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_22_113705) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_24_062744) do
   create_table "actions", charset: "utf8", force: :cascade do |t|
     t.integer "milk"
     t.boolean "omutsu", default: false
@@ -32,6 +32,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_22_113705) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "records", charset: "utf8", force: :cascade do |t|
+    t.integer "milk"
+    t.string "omutsu", default: "0"
+    t.string "body_temperature"
+    t.text "memo"
+    t.bigint "baby_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["baby_id"], name: "index_records_on_baby_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -42,4 +53,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_22_113705) do
   end
 
   add_foreign_key "actions", "babies"
+  add_foreign_key "records", "babies"
 end

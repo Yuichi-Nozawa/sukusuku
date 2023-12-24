@@ -1,7 +1,7 @@
 <h1><%= @baby.name %></h1>
 
-<%= button_to "記録する", new_baby_action_path(@baby), method: :get, class: "btn btn-primary" %>
+<%= button_to "記録する", new_baby_record_path(@baby), method: :get, class: "btn btn-primary" %>
 
-<%= button_to "記録を見る", baby_actions_path(@baby), method: :get, class: "btn btn-secondary" %><br>
+<%= button_to "記録を見る", baby_records_path(@baby), method: :get, class: "btn btn-secondary" %><br>
 
 <%= link_to "トップに戻る", babies_path, class: "btn btn-primary" %>

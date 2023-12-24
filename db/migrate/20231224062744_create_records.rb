@@ -1,8 +1,8 @@
-class CreateActions < ActiveRecord::Migration[7.0]
+class CreateRecords < ActiveRecord::Migration[7.0]
   def change
-    create_table :actions do |t|
+    create_table :records do |t|
       t.integer :milk
-      t.boolean :omutsu, default: false
+      t.string :omutsu, default: false
       t.string :body_temperature
       t.text :memo
       t.references :baby, foreign_key: true

@@ -1,3 +1,3 @@
 class Baby < ApplicationRecord
-  has_many :actions
+  has_many :records
 end
