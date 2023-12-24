@@ -11,17 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_12_24_062744) do
-  create_table "actions", charset: "utf8", force: :cascade do |t|
-    t.integer "milk"
-    t.boolean "omutsu", default: false
-    t.string "body_temperature"
-    t.text "memo"
-    t.bigint "baby_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["baby_id"], name: "index_actions_on_baby_id"
-  end
-
   create_table "babies", charset: "utf8", force: :cascade do |t|
     t.string "name"
     t.string "gender"
@@ -52,6 +41,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_24_062744) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "actions", "babies"
   add_foreign_key "records", "babies"
 end

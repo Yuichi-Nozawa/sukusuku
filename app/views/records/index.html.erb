@@ -1,0 +1,8 @@
+<h1><%= @baby.name %>の記録一覧</h1>
+
+<ul>
+  <% @records.each do |record| %>
+    <li><%= record.created_at %> - ミルク: <%= record.milk %>, 体温: <%= record.body_temperature %>, メモ: <%= record.memo %></li>
+  <% end %>
+</ul>
+<%= link_to "トップに戻る", babies_path, class: "btn btn-primary" %>

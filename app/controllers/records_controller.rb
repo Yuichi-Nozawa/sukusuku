@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  before_action :find_baby, only: [:new, :create]
+  before_action :find_baby, only: [:index, :new, :create]
 
   def new
     @record = Record.new
