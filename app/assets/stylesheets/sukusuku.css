@@ -1,5 +1,50 @@
 body {
   background-color: #FFFFCF;
-  font-family: 'Arial', sans-serif;
+  font-size:25px;
+  /* font-family: 'Arial', sans-serif; */
 }
 
+h1 {
+  font-family: 'Hiragino Maru Gothic ProN W4';
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.btn {
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.milk {
+  font-size: 20px;
+  width: 70px;
+  height: 35px;
+}
+
+.temperature {
+  font-size: 20px;
+  width: 55px;
+  height: 35px;
+}
+
+.name {
+  font-size: 20px;
+  width: 130px;
+  height: 22px;
+}
+
+.memo {
+  font-size: 20px;
+}
+
+.year {
+  font-size: 20px;
+  width: 70px;
+  height: 25px;
+}
+
+.month, .day {
+  font-size: 20px;
+  width: 45px;
+  height: 25px;
+}

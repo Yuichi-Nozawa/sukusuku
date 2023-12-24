@@ -3,7 +3,7 @@
 <%= form_with(model: @baby, url: babies_path, method: :post) do |form| %>
   <div class="field">
     <%= form.label :お名前 %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'name' %>
   </div><br>
 
   <div class="field">
@@ -14,14 +14,14 @@
 
   <div class="field">
     <%= form.label :生年月日 %><br>
-    <%= form.select :birth_year, (Date.current.year - 10..Date.current.year).to_a.reverse, { prompt: '- - - - - -' } %>年
-    <%= form.select :birth_month, 1..12, { prompt: '- - -' } %>月
-    <%= form.select :birth_day, 1..31, { prompt: '- - -' } %>日
+    <%= form.select :birth_year, (Date.current.year - 10..Date.current.year).to_a.reverse, { prompt: '- - - - - -' }, class: 'year' %>年
+    <%= form.select :birth_month, 1..12, { prompt: '- - -' }, class: 'month' %>月
+    <%= form.select :birth_day, 1..31, { prompt: '- - -' }, class: 'day' %>日
   </div><br>
 
   <div class="actions">
-    <%= form.submit "追加" %>
-  </div><br>
+    <%= form.submit "追加", class: "btn" %>
+  </div><br><br>
 <% end %>
 
-<%= link_to "トップに戻る", babies_path, class: "btn btn-primary" %>
+<%= link_to "トップに戻る", babies_path, class: "btn-primary" %>

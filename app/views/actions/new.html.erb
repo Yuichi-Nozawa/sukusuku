@@ -3,7 +3,7 @@
 <%= form_with(model: @action, url: baby_actions_path(@baby), method: :post) do |form| %>
   <div class="field">
     <%= form.label :milk, "ミルクの量" %><br>
-    <%= form.select :milk, (0..200).step(10), { prompt: '- - - -' } %>cc
+    <%= form.select :milk, (0..200).step(10), { prompt: '- - - -' }, class: 'milk' %>cc
   </div><br>
 
   <div class="field">
@@ -15,12 +15,12 @@
 
   <div class="field">
     <%= form.label :body_temperature, "体温" %><br>
-    <%= form.text_field :body_temperature, size: 10 %>度
+    <%= form.text_field :body_temperature, size: 10, class: 'temperature' %>度
   </div><br>
 
   <div class="field">
     <%= form.label :memo, "メモ" %><br>
-    <%= form.text_area :memo, rows: 4, cols: 30 %>
+    <%= form.text_area :memo, rows: 3, cols: 30, class: 'memo' %>
   </div><br>
 
   <div class="actions">

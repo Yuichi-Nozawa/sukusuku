@@ -1,6 +1,6 @@
 <h1>すくすく</h1>
 
-<%= image_tag 'publicdomainq-0006718ljo.jpeg', alt: 'Description of the image' %>
+<%= image_tag 'publicdomainq-0006718ljo.jpeg', style: 'width: 300px; height: auto;' %>
 
 <ul>
   <% @babies.each do |baby| %>
@@ -10,4 +10,4 @@
   <% end %>
 </ul>
 
-<%= link_to "新しい赤ちゃん", new_baby_path, class: "btn btn-success" %>
+<%= link_to "新しい赤ちゃん", new_baby_path, class: "btn-success" %>
