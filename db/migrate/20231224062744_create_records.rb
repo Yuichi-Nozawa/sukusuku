@@ -4,7 +4,6 @@ class CreateRecords < ActiveRecord::Migration[7.0]
       t.integer :milk
       t.boolean :oshikko, default: false
       t.boolean :unchi, default: false
-      t.boolean :geri, default: false
       t.string :body_temperature
       t.text :memo
       t.references :baby, foreign_key: true
