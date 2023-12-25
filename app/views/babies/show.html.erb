@@ -36,7 +36,7 @@
   <% if @baby.image.present? %>
     <%= image_tag @baby.image, style: 'width: 320px; height: auto;' %>
   <% else %>
-    <p>画像はありません。</p>
+    <p>選択した画像がここに表示されます。</p>
   <% end %>
 
   <div class="buttons">
@@ -45,5 +45,4 @@
     <%= button_to "記録を見る", baby_records_path(@baby), method: :get, class: "common-button" %>
   </div>
 
-  <%= link_to "トップに戻る", babies_path, class: "btn btn-primary" %>
 </div>

@@ -1,3 +1,10 @@
+<style>
+  .large-radio {
+    transform: scale(1.5);
+    margin-right: 10px;
+  }
+</style>
+
 <h1>新しい赤ちゃん</h1>
 
 <%= form_with(model: @baby, url: babies_path, method: :post) do |form| %>
@@ -7,9 +14,9 @@
   </div><br>
 
   <div class="field">
-    <%= form.label :性別 %><br>
-    <%= form.radio_button :gender, '男の子' %> 男の子
-    <%= form.radio_button :gender, '女の子' %> 女の子
+  <%= form.label :性別 %><br>
+  <%= form.radio_button :gender, '男の子', class: 'large-radio' %> 男の子
+  <%= form.radio_button :gender, '女の子', class: 'large-radio' %> 女の子
   </div><br>
 
   <div class="field">
