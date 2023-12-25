@@ -1,7 +1,43 @@
-<h1><%= @baby.name %></h1>
+<style>
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
 
-<%= button_to "記録する", new_baby_record_path(@baby), method: :get, class: "btn btn-primary" %>
+  .container {
+    text-align: center;
+  }
 
-<%= button_to "記録を見る", baby_records_path(@baby), method: :get, class: "btn btn-secondary" %><br>
+  .buttons {
+    margin-top: 20px;
+    display: flex;
+  }
 
-<%= link_to "トップに戻る", babies_path, class: "btn btn-primary" %>
+  .common-button {
+    background-color: #93E6B4; /* ピンク色 */
+    color: #000; /* 黒色 */
+    border: none;
+    padding: 15px 0; /* 垂直方向のパディングは変更しない */
+    font-size: 30px;
+    border-radius: 30px; /* 適切な楕円形にするために高さの半分の値 */
+    margin-right: 20px; /* ボタン間の横の間隔 */
+    width: 200px; /* ボタンの横幅 */
+    white-space: nowrap; /* テキストが折り返されないようにする */
+  }
+</style>
+
+<div class="container">
+  <h1><%= @baby.name %></h1>
+
+  <div class="buttons">
+    <%= button_to "記録する", new_baby_record_path(@baby), method: :get, class: "common-button" %>
+    <br>
+    <%= button_to "記録を見る", baby_records_path(@baby), method: :get, class: "common-button" %>
+  </div><br>
+
+  <%= link_to "トップに戻る", babies_path, class: "btn btn-primary" %>
+</div>
