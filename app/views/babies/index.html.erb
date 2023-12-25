@@ -1,13 +1,66 @@
-<h1>すくすく</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>すくすく</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-<%= image_tag 'publicdomainq-0006718ljo.jpeg', style: 'width: 250px; height: auto;' %>
+    h1 {
+      text-align: center;
+    }
 
-<ul>
-  <% @babies.each do |baby| %>
-    <li>
-      <%= link_to baby.name, baby_path(baby) %>
-    </li>
-  <% end %>
-</ul>
+    .container {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
 
-<%= link_to "新しい赤ちゃん", new_baby_path, class: "btn-success" %>
+    #image-container {
+      margin-right: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .new-baby-link {
+      display: block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>すくすく</h1>
+
+  <div class="container">
+    <div id="image-container">
+      <%= image_tag 'publicdomainq-0006718ljo.jpeg', style: 'width: 250px; height: auto;' %>
+    </div>
+
+    <ul>
+      <% @babies.each do |baby| %>
+        <li>
+          <%= link_to baby.name, baby_path(baby), style: "text-decoration: none;" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= link_to "新しい赤ちゃん", new_baby_path, class: "btn-success new-baby-link" %>
+</body>
+</html>
