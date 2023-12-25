@@ -19,9 +19,12 @@
     <%= form.select :birth_day, 1..31, { prompt: '- - -' }, class: 'day' %>日
   </div><br>
 
+  <div class="field">
+    <%= form.label :画像 %><br>
+    <%= form.file_field :image %>
+  </div><br>
+
   <div class="actions">
     <%= form.submit "追加", class: "btn" %>
   </div><br><br>
 <% end %>
-
-<%= link_to "トップに戻る", babies_path, class: "btn-primary" %>

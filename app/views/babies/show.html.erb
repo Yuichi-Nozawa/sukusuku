@@ -33,11 +33,17 @@
 <div class="container">
   <h1><%= @baby.name %></h1>
 
+  <% if @baby.image.present? %>
+    <%= image_tag @baby.image, style: 'width: 320px; height: auto;' %>
+  <% else %>
+    <p>画像はありません。</p>
+  <% end %>
+
   <div class="buttons">
     <%= button_to "記録する", new_baby_record_path(@baby), method: :get, class: "common-button" %>
     <br>
     <%= button_to "記録を見る", baby_records_path(@baby), method: :get, class: "common-button" %>
-  </div><br>
+  </div>
 
   <%= link_to "トップに戻る", babies_path, class: "btn btn-primary" %>
 </div>
