@@ -2,16 +2,35 @@
   body {
     padding-left: 40%;
   }
-</style> 
+
+  .milk-label {
+    display: inline-block; /* 画像とテキストを横並びにするために追加 */
+  }
+
+  .milk-label img {
+    margin-right: 5px; /* 画像とテキストの間に適切な間隔を追加 */
+    width: 30px; /* 画像の幅を調整 */
+    height: 30px; 
+  }
+  img {
+    margin-right: 5px; /* 画像とテキストの間に適切な間隔を追加 */
+    width: 30px; /* 画像の幅を調整 */
+    height: 30px; 
+  }
+</style>
  
  <h1>新しい記録</h1>
 
 <%= form_with(model: @record, url: baby_records_path(@baby), method: :post) do |form| %>
   <div class="field">
-    <%= form.label :milk, "ミルクの量" %><br>
+    <div class="milk-label">
+      <%= image_tag("publicdomainq-0006718ljo.jpeg", alt: "ミルクアイコン", class: "milk-icon") %> <!-- 画像を挿入 -->
+      <%= form.label :milk, "ミルクの量" %><br>
+    </div>
     <%= form.select :milk, (0..200).step(10), { prompt: '- - - -' }, class: 'milk' %>cc
   </div><br>
 
+  <%= image_tag("publicdomainq-0006718ljo.jpeg", alt: "ミルクアイコン", class: "milk-icon") %>
   おむつ交換（複数選択可）<br>
   <div class="field" style="display: inline-block;">
     <%= form.check_box :oshikko %>
@@ -24,11 +43,13 @@
   </div><br><br>
 
   <div class="field">
+    <%= image_tag("publicdomainq-0006718ljo.jpeg", alt: "ミルクアイコン", class: "milk-icon") %>
     <%= form.label :body_temperature, "体温" %><br>
     <%= form.text_field :body_temperature, size: 10, class: 'temperature' %>度
   </div><br>
 
   <div class="field">
+    <%= image_tag("publicdomainq-0006718ljo.jpeg", alt: "ミルクアイコン", class: "milk-icon") %>
     <%= form.label :memo, "メモ" %><br>
     <%= form.text_area :memo, rows: 3, cols: 30, class: 'memo' %>
   </div><br>
