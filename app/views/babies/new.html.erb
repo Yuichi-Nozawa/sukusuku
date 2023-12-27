@@ -6,6 +6,11 @@
   body {
     padding-left: 38%;
   }
+  .eggandchick {
+    position: absolute;
+    top: 55%;
+    left:55%;
+  }
 </style>
 
 <h1>新しい赤ちゃん</h1>
@@ -36,5 +41,10 @@
 
   <div class="actions">
     <%= form.submit "追加", class: "btn" %>
-  </div><br><br>
+  </div>
+
 <% end %>
+
+<div class="eggandchick">
+  <%= image_tag 'eggandchick.jpeg', style: 'width: 250px; height: auto;' %>
+</div>
