@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :babies do
     resources :records, only: [:index, :new, :create]
   end
+  resources :users do
+    resources :records, only: [:index, :new, :create]
+  end
 end

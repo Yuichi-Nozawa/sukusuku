@@ -27,7 +27,7 @@ class RecordsController < ApplicationController
   end
 
   def record_params
-    params.require(:record).permit(:milk, :oshikko, :unchi, :body_temperature, :memo).merge(baby_id: @baby.id)
+    params.require(:record).permit(:milk, :oshikko, :unchi, :body_temperature, :memo).merge(baby_id: @baby.id, user_id: current_user.id)
   end
 
   def move_to_index

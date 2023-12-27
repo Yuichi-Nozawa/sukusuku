@@ -22,6 +22,7 @@
   <thead>
     <tr>
       <th scope="col">時刻</th>
+      <th scope="col">担当</th>
       <th scope="col">ミルク(cc)</th>
       <th scope="col">おしっこ</th>
       <th scope="col">うんち</th>
@@ -33,6 +34,7 @@
     <% @records.each do |record| %>
       <tr>
         <td><%= record.created_at.strftime("%m/%d %H:%M") %></td>
+        <td><%= record.user.nickname %></td>
         <td><%= record.milk %></td>
         <td><%= record.oshikko ? "●" : "" %></td>
         <td><%= record.unchi ? "●" : "" %></td>
