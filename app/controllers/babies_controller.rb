@@ -1,4 +1,6 @@
 class BabiesController < ApplicationController
+  before_action :move_to_index, except: [:index]
+
   def index
     @babies = Baby.all
   end
@@ -25,5 +27,11 @@ class BabiesController < ApplicationController
 
   def baby_params
     params.require(:baby).permit(:name, :gender, :birth_year, :birth_month, :birth_day, :image)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end

@@ -1,4 +1,5 @@
 class RecordsController < ApplicationController
+  before_action :move_to_index
   before_action :find_baby, only: [:index, :new, :create]
 
   def new
@@ -27,5 +28,11 @@ class RecordsController < ApplicationController
 
   def record_params
     params.require(:record).permit(:milk, :oshikko, :unchi, :body_temperature, :memo).merge(baby_id: @baby.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to babies_path
+    end
   end
 end
