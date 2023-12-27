@@ -1,7 +1,6 @@
 body {
   background-color: #FFFFCF;
   font-size:25px;
-  /* font-family: 'Arial', sans-serif; */
 }
 
 h1 {
@@ -47,4 +46,8 @@ h1 {
   font-size: 20px;
   width: 45px;
   height: 25px;
+}
+
+.header__bar {
+  text-align: right;
 }

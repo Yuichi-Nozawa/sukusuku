@@ -17,12 +17,12 @@
     h1 {
       text-align: center;
       font-size: 80px;
+      margin: 0 auto 30px;
     }
 
     .container {
       display: flex;
       align-items: flex-start;
-      margin-top: 20px;
     }
 
     #image-container {
@@ -43,9 +43,48 @@
       display: block;
       margin-top: 140px;
     }
+
+    .header__bar {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .devises {
+      display: flex;
+    }
+
+    .devises a {
+      margin-left: 10px;
+      padding: 0 16px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .devises a:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
+  <div class="header__bar row">
+    <% if user_signed_in? %>
+      <div class="devises">
+        <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+      </div>
+    <% else %>
+      <div class="devises">
+        <%= link_to "ログイン", new_user_session_path, class: "post" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+      </div>
+    <% end %>
+  </div>
+
   <h1>す く す く</h1>
 
   <div class="container">
