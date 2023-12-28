@@ -24,9 +24,18 @@
     float: right;
     margin-left: 10px;
   }
+
+  .chicks {
+    position: absolute;
+    top: 5%;
+    left:78%;
+  }
 </style>
 
-<h1 class="record-title"><%= @baby.name %>の記録　　　　　　　　　　　　　　　<%= image_tag 'chicks-removebg-preview (3).png', style: 'width: 250px; height: auto;' %></h1>
+<h1 class="record-title"><%= @baby.name %>の記録</h1>
+<div class="chicks">
+  <%= image_tag 'chicks-removebg-preview (3).png', style: 'width: 300px; height: auto;' %>
+</div>
 
 <table class="table">
   <thead>

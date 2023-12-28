@@ -15,7 +15,7 @@ https://sukusuku.onrender.com
 # 実装予定の機能
 家族内のみで情報を共有できるようにしたいので、登録しているユーザーを家族ごとのグループに分け、他の家族の情報は見れないような仕組みにしていきたい。
 # データベース設計
-
+ [![Image from Gyazo](https://i.gyazo.com/851f964dc9f0fb84508c26c964be56e2.png)](https://gyazo.com/851f964dc9f0fb84508c26c964be56e2)
 
 # 画面遷移図
 
