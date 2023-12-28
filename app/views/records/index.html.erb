@@ -14,9 +14,19 @@
   th {
     background-color: #f2f2f2;
   }
+
+  .record-title {
+    display: inline-block;
+    margin-top: 0;
+  }
+
+  .record-image {
+    float: right;
+    margin-left: 10px;
+  }
 </style>
 
-<h1><%= @baby.name %>の記録</h1>
+<h1 class="record-title"><%= @baby.name %>の記録　　　　　　　　　　　　　　　<%= image_tag 'chicks-removebg-preview (3).png', style: 'width: 250px; height: auto;' %></h1>
 
 <table class="table">
   <thead>
