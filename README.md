@@ -33,7 +33,7 @@ Ruby, HTML, CSS<br>
 render<br>
 ・テキストエディタ<br>
 Visual Studio Code<br>
-。タスク管理<br>
+・タスク管理<br>
 GitHub
 
 # 工夫したポイント
